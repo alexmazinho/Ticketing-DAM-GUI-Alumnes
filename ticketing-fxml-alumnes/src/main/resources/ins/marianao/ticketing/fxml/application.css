@@ -1,0 +1,426 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+ 	-fx-font-family: "Catamaran";
+ 	-fx-font-size: 13 px;
+ 	-fx-font-weight: normal;
+ 	-fx-background-color: white;
+}
+
+.button {
+	/*-fx-font-family: "sans-serif";*/
+	-fx-font-family: Dosis;
+	-fx-background-color:
+        /*rgba(0,0,0,0.88),*/
+        gray,
+        /*linear-gradient(#9a9a9a, #909090),*/
+        linear-gradient(lightgrey, lightslategray),
+        linear-gradient(white 0%, #f3f3f3 50%, #ececec 51%, #f2f2f2 100%);
+    /*-fx-background-insets: 0 0 -1 0,0,1;*/
+    -fx-background-radius: 4;
+    -fx-padding: 8px 16px;
+    -fx-text-fill: lightslategray;
+    -fx-font-size: 16px;
+
+    -fx-border-color: lightslategray;
+	-fx-border-style: solid outside;
+	-fx-border-width: 1px;
+	-fx-border-insets: 0;
+	-fx-border-radius: 5px;
+}
+
+.button:hover {
+     -fx-background-color:
+        white,
+        linear-gradient(lightgray 2%, lavender 40%, ghostwhite 80%);
+        /*linear-gradient(lightslategray 50%, lightgray 75%, ghostwhite 100%),*/
+        /*radial-gradient(center 50% -40%, radius 200%, lightslategray 45%, rgba(30,30,230,0) 50%)*/
+        /*radial-gradient(center 50% 50%, radius 80%, rgba(30,30,230,0) 40%, lightslategray 160%);*/
+     /*-fx-text-fill: dimgray;*/
+     /*-fx-font-weight: bold;*/
+     /*-fx-underline: true;*/
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+     -fx-cursor: hand;
+}
+.button:pressed {
+    -fx-background-insets: 2 0 0 0,2 0 3 0, 2 0 4 0, 2 0 5 0;
+}
+
+.button:disabled {
+	-fx-opacity: 0.8;
+}
+
+.button.button-fullwidth {
+	-fx-pref-width: 1200px;
+}
+
+.combo-box.combo-fullwidth {
+	-fx-pref-width: 1200px;
+}
+
+.panel-solid {
+	-fx-background-color: white;
+}
+
+/*
+.button Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
+    -fx-effect: dropshadow( one-pass-box , black , 0, 10.0 , 0 , -1 );
+}
+*/
+
+.table-column .button,
+.button.icon-button {
+	/*-fx-min-width: 0.0;
+	-fx-font-size: 12px;
+	-fx-font-weight: normal;
+	-fx-padding: 0;
+	-fx-border-style: none;
+	-fx-border-width: 0.0;
+	-fx-background-color: white;*/
+}
+
+.table-column .button {
+	/*-fx-max-height: 20px;*/
+}
+
+.password-field, .text-field, .combo-box, .combo-box > .cell, .date-picker > .text-field, .spinner > .text-field  {
+	-fx-font-size: 16 px;
+	-fx-text-fill: teal;
+	-fx-alignment: center;
+	-fx-pref-height: 40px;
+	-fx-min-height: 40px;
+}
+
+.text-field, .password-field, .combo-box,
+.date-picker > .text-field,
+.spinner > .text-field,
+.date-picker > .arrow-button,
+.date-picker-popup .button,
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button,
+.textarea  {
+	-fx-border-color: lightslategray;
+	-fx-border-style: solid outside;
+	-fx-border-width: 1px;
+	-fx-border-insets: 0;
+	-fx-border-radius: 4px;
+	-fx-padding: 6.0px;
+}
+
+.table-cell {
+    -fx-padding: 0.5em 0.5em 0.1em 0.3em;
+    -fx-border-color: -fx-box-border -fx-box-border transparent transparent;
+    -fx-border-insets: 0;
+}
+
+
+/* Mida, bordes i color fons títols */
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: white;
+    -fx-size: 45;
+    -fx-border-color: -fx-box-border;
+    -fx-border-width: 0 1 3 0;
+    -fx-border-insets: 0;
+}
+.table-view .column-header {
+	-fx-background-color: slategrey;
+	-fx-size: 35;
+}
+
+/* Títols negreta */
+.table-view .column-header .label {
+	-fx-font-weight: bold;
+	-fx-font-size: 16 px;
+	-fx-text-fill: white;
+}
+
+.table-column .text-field {
+	-fx-max-height: 25px;
+	-fx-border-color: lightslategray;
+	-fx-border-style: none;
+	-fx-border-width: 0;
+	-fx-border-insets: 0;
+	-fx-border-radius: 2px;
+	-fx-padding: 0.0 2.0px;
+	-fx-font-size: 12 px;
+}
+
+.control-center, .control-center .list-cell, .col-center,
+.table-view .column-header.col-center .label {
+	-fx-alignment: center;
+}
+
+.control-left, .control-left .list-cell, .col-left,
+.table-view .column-header.col-left .label {
+	-fx-alignment: center-left;
+}
+
+.control-right, .control-right .list-cell, .col-right,
+.table-view .column-header.col-right .label {
+	-fx-alignment: center-right;
+}
+
+/* CSS Date-picker => com/sun/javafx/scene/control/skin/modena/modena.css */
+
+.date-picker {
+	-fx-max-width: 120px;
+}
+
+.date-picker > .text-field,
+.spinner > .text-field {
+	-fx-border-radius: 5px 0.0 0.0 5px;
+}
+
+.date-picker > .arrow-button {		/* Button del calendari adjunt al datepicker */
+	-fx-padding: 8.0px;
+	-fx-border-radius: 0 5px 5px 0;
+
+}
+
+.date-picker > .arrow-button > .arrow {		/* Icona calendari button adjunt al datepicker */
+	-fx-background-color: lightslategray;
+}
+
+.date-picker-popup .button { 	/* Buttons pop-up date-picker */
+    -fx-padding: 4px;
+    -fx-text-fill: lightslategray;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+	-fx-border-width: 0.5px;
+	-fx-border-radius: 5px;
+	-fx-min-width: 30px;
+}
+
+.spinner .increment-arrow-button {
+	-fx-border-width: 1px 0 0 0;
+	-fx-padding: 10.0px;
+	-fx-border-radius: 0;
+}
+.spinner .decrement-arrow-button {
+	-fx-border-width: 0 0 1px 0;
+	-fx-padding: 10.0px;
+	-fx-border-radius: 0;
+}
+
+
+.combo-box  {
+	-fx-border-radius: 6px;
+	-fx-padding: 2.0px 4.0px;
+	-fx-background-color:white;
+}
+
+.combo-box > * {
+	-fx-border-style: none outside;
+	-fx-padding: 4.0px;
+}
+
+.combo-box .cell{
+    -fx-text-fill: teal;
+}
+
+.password-field:focused, .text-field:focused, .combo-box:focused,
+.date-picker:focused > .text-field,
+.date-picker > .text-field:focused,
+.spinner > .text-field:focused,
+.spinner:focused > .text-field,
+.textarea:focused {
+	/*-fx-border-color: lightslategray;
+	-fx-border-style: solid outside;
+	-fx-border-width: 1px;
+	-fx-border-insets: 0;
+	-fx-border-radius: 4px;*/
+
+    -fx-background-color: radial-gradient(center 50% 50%, radius 80% , white, beige);
+}
+
+.password-field:disabled, .text-field:disabled, .combo-box:disabled, .combo-box:disabled > *,
+.date-picker:disabled > .text-field,
+.date-picker > .text-field:disabled,
+.input-group > .text-field:disabled,
+.input-group > .date-picker:disabled > .text-field,
+.input-group > .date-picker > .text-field:disabled,
+.input-group > .spinner > .text-field:disabled,
+.input-group > .spinner:disabled > .text-field,
+.spinner > .text-field:disabled,
+.spinner:disabled > .text-field,
+.textarea:disabled {
+	-fx-text-fill: slategrey;
+	-fx-opacity: 0.8;
+}
+
+.password-field:disabled, .text-field:disabled,
+.date-picker:disabled > .text-field,
+.date-picker > .text-field:disabled,
+.spinner > .text-field:disabled,
+.spinner:disabled > .text-field,
+.input-group > .text-field:disabled,
+.input-group > .password-field:disabled,
+.input-group > .date-picker:disabled > .text-field,
+.input-group > .date-picker > .text-field:disabled,
+.input-group > .combo-box:disabled,
+.input-group > .spinner > .text-field:disabled,
+.input-group > .spinner:disabled > .text-field,
+.textarea:disabled {
+	-fx-background-color: radial-gradient(center 50% 50%, radius 100% , white, beige);
+	-fx-border-style: dashed outside;
+}
+
+.topregion {
+    -fx-background-color: linear-gradient(#a6b5c9 85%, slategrey 100%);
+}
+
+.title {
+	-fx-font-family: Dosis;
+	-fx-font-size: 26 px;
+    -fx-font-weight: bold;
+	-fx-text-fill: lightslategray;
+}
+
+.topregion .title {
+	-fx-text-fill: white;
+	-fx-font-size: 30 px;
+}
+
+.title2 {
+	-fx-font-family: Dosis;
+	-fx-font-size: 24 px;
+    -fx-font-weight: bold;
+	-fx-text-fill: teal;
+}
+
+
+.labels
+{
+    -fx-font-family: Dosis;
+    -fx-font-size: 15 px;
+    -fx-font-weight: bold;
+	-fx-text-fill: dimgray;
+}
+
+.labels-large {
+    -fx-font-size: 20 px;
+}
+
+.labels-small {
+    -fx-font-size: 13 px;
+    -fx-font-weight: normal;
+}
+
+.underlabels {
+    -fx-font-size: 13 px;
+    -fx-font-style: italic;
+	/*-fx-text-fill: lightslategray;*/
+	-fx-text-fill: dimgray;
+}
+
+.error-sms {
+	-fx-font-size: 13 px;
+	-fx-font-style: italic;
+	-fx-text-fill: red;
+}
+
+
+.text-console {
+	-fx-background-color: beige;
+	/*-fx-background-color: white, linear-gradient(beige 0%, rgba(225,225,225,0.2) 100%);*/
+	-fx-text-fill: lightslategray;
+	/*-fx-text-alignment:  justify;*/
+	-fx-padding: 10.0px;
+
+	-fx-border-color: lightslategray;
+	-fx-border-style: solid outside;
+	-fx-border-width: 1px;
+	-fx-border-radius: 3px;
+	-fx-border-insets: 0;
+
+	/* Font mono */
+	-fx-font-family: monospace;
+	-fx-font-size: 13.0px;
+
+}
+
+.input-group > .password-field,
+.input-group > .text-field,
+.input-group > .spinner > .text-field,
+.input-group > .combo-box,
+.input-group > .date-picker > .text-field,
+.input-group > .text-area {
+	-fx-border-color: lightslategray;
+	-fx-border-style: solid outside;
+	-fx-border-width: 1px;
+	-fx-border-insets: 0;
+	-fx-border-radius: 0.0 5px 5px 0.0;
+	-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+
+	/*-fx-pref-width: 50px;*/
+	-fx-pref-height: 40px;
+	/*-fx-min-width: 50px;*/
+	-fx-min-height: 40px;
+}
+
+.input-group > .text-area {
+	-fx-pref-height: 100px;
+	/*-fx-min-width: 50px;*/
+	-fx-min-height: 100px;
+}
+
+
+.input-group > .date-picker > .text-field,
+.input-group > .spinner > .text-field {
+	-fx-border-radius: 0.0;
+}
+
+.input-group > .label {
+	-fx-border-color: lightslategray;
+	-fx-border-style: solid outside;
+	-fx-border-width: 1px;
+	-fx-border-insets: 0;
+	-fx-border-radius: 5px 0.0 0.0 5px;
+	-fx-background-color: lightslategray;
+
+	-fx-pref-width: 90px;
+	-fx-pref-height: 40px;
+	-fx-min-width: 90px;
+	-fx-min-height: 40px;
+
+	-fx-alignment:  center;
+	-fx-padding: 10.0px 2.0px;
+
+	-fx-font-size: 14 px;
+	-fx-text-fill: white;
+}
+
+.input-group > .label.labels-large {
+	-fx-pref-width: 150px;
+	-fx-min-width: 150px;
+}
+
+.button.square-button {
+    -fx-padding: 8px;
+	-fx-min-width: 70px;
+	-fx-min-height: 60px;
+	-fx-font-weight: bold;
+}
+
+.button.icon-button {
+    -fx-padding: 6px;
+	-fx-min-width: 50px;
+	-fx-min-height: 40px;
+	-fx-font-weight: bold;
+}
+
+.table-column .button {
+	-fx-padding: 3px;
+	-fx-min-width: 30px;
+	-fx-min-height: 30px;
+}
+
+.red, .red .label {
+	-fx-text-fill: red;
+}
+
+.green, .green .label {
+	-fx-text-fill: green;
+}

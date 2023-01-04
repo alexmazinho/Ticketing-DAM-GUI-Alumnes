@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="720.0" prefWidth="900.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ins.marianao.ticketing.fxml.ControllerMenu">
+  <children>
+    <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="true" text="%fxml.text.menu.file">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#logoffMenuClick" text="%fxml.text.menu.file.exit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+          </items>
+        </Menu>
+            <Menu fx:id="mnTickets" mnemonicParsing="true" text="%fxml.text.menu.tickets">
+              <items>
+                <MenuItem fx:id="mnItOpenTicket" disable="true" mnemonicParsing="false" onAction="#openTicketMenuClick" text="%fxml.text.menu.tickets.new">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#ticketsPendingMenuClick" text="%fxml.text.menu.tickets.pending">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#ticketsInProcessMenuClick" text="%fxml.text.menu.tickets.inprogres">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#ticketsHistoryMenuClick" text="%fxml.text.menu.tickets.history">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu fx:id="mnUsers" mnemonicParsing="false" text="%fxml.text.menu.users">
+              <items>
+                <MenuItem fx:id="mnItAddUser" disable="true" mnemonicParsing="false" onAction="#newUserMenuClick" text="%fxml.text.menu.users.new">
+                <accelerator>
+                        <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#usersDirectoryMenuClick" text="%fxml.text.menu.users.directory">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="mnItImport" disable="true" mnemonicParsing="false" onAction="#importUsersMenuClick" text="%fxml.text.menu.users.import" />
+                  <MenuItem fx:id="mnItExport" disable="true" mnemonicParsing="false" onAction="#exportUsersMenuClick" text="%fxml.text.menu.users.export" />
+              </items>
+            </Menu>
+            <Menu fx:id="mnProfile" mnemonicParsing="false" text="%fxml.text.menu.profile">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#editProfileMenuClick" text="%fxml.text.menu.profile.edit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoffClick" text="%fxml.text.menu.profile.logoff">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+               </items>
+            </Menu>
+        <Menu mnemonicParsing="true" text="%fxml.text.menu.help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#aboutMenuClick" text="%fxml.text.menu.help.about" />
+
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <BorderPane fx:id="appRootPane">
+
+	<top>
+		<AnchorPane styleClass="topregion" BorderPane.alignment="CENTER">
+			<children>
+				<ImageView fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+					<image>
+						<Image url="@resources/insmarianao.png" />
+					</image>
+				</ImageView>
+				<Label layoutX="21.0" layoutY="18.0" prefHeight="80.0" prefWidth="518.0" styleClass="title" text="%fxml.text.app.title" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+			</children>
+		</AnchorPane>
+	</top>
+	<center>
+		<AnchorPane fx:id="portviewPane" styleClass="centerregion" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="loginForm" layoutX="40.0" layoutY="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <GridPane hgap="10.0" maxWidth="-Infinity" minWidth="600.0" vgap="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="100.0">
+                        	<columnConstraints>
+                        		<ColumnConstraints hgrow="ALWAYS" />
+                              <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="250.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        	</columnConstraints>
+                        	<rowConstraints>
+                              <RowConstraints vgrow="ALWAYS" />
+                              <RowConstraints vgrow="ALWAYS" />
+                              <RowConstraints vgrow="ALWAYS" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        		<RowConstraints vgrow="ALWAYS" />
+                        	</rowConstraints>
+                            <children>
+                              <Label styleClass="title" text="%fxml.text.login.login" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@resources/user.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="txtUsername" promptText="%fxml.text.login.username" styleClass="control-center" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin></TextField>
+                              <PasswordField fx:id="txtPassword" promptText="%fxml.text.login.password" styleClass="control-center" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <Button fx:id="btnLogin" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#loginClick" styleClass="button-fullwidth" text="%fxml.text.login.submit" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+
+                        	</children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+	</center>
+	</BorderPane>
+  </children>
+</VBox>
